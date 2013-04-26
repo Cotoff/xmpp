@@ -38,7 +38,7 @@ namespace ubiety.net
 
 		public Address()
 		{
-			_resolver = new Resolver {UseCache = true, TimeOut = 5, TransportType = TransportType.Tcp};
+			_resolver = new Resolver(Resolver.DefaultDnsServers) {UseCache = true, TimeOut = 5, TransportType = TransportType.Tcp};
 			_resolver.OnVerbose += _resolver_OnVerbose;
 		}
 
@@ -55,6 +55,10 @@ namespace ubiety.net
 			{
 				return IPAddress.Parse("127.0.0.1");
 			}
+
+			IPAddress res;
+			if(IPAddress.TryParse(UbietySettings.Hostname, out res))
+			   return res;
 
 			if(_srvRecords == null && !_srvFailed)
 				_srvRecords = FindSRV();

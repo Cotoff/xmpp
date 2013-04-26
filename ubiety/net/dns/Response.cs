@@ -206,9 +206,9 @@ namespace ubiety.net.dns
 			get
 			{
 				var list = Answers.Cast<RR>().ToList();
-				list.AddRange(Answers);
-				list.AddRange(Authorities);
-				list.AddRange(Additionals);
+				list.AddRange(Answers.Cast<RR>());
+				list.AddRange(Authorities.Cast<RR>());
+				list.AddRange(Additionals.Cast<RR>());
 				return list.ToArray();
 			}
 		}
