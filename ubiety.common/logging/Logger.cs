@@ -16,7 +16,7 @@
 //Temple Place, Suite 330, Boston, MA 02111-1307 USA
 
 using System;
-using NLog;
+//using NLog;
 
 namespace ubiety.common.logging
 {
@@ -36,9 +36,9 @@ namespace ubiety.common.logging
 		/// <returns>
 		/// A <see cref="System.Boolean"/>
 		/// </returns>
-		public static bool IsDebugEnabled(object o)
+		public static bool IsDebugEnabled( object o )
 		{
-			return IsDebugEnabled(o.GetType());
+			return IsDebugEnabled( o.GetType() );
 		}
 
 		/// <summary>
@@ -50,9 +50,9 @@ namespace ubiety.common.logging
 		/// <returns>
 		/// A <see cref="System.Boolean"/>
 		/// </returns>
-		public static bool IsDebugEnabled(Type t)
+		public static bool IsDebugEnabled( Type t )
 		{
-			return IsDebugEnabled(t.FullName);
+			return IsDebugEnabled( t.FullName );
 		}
 
 		/// <summary>
@@ -64,9 +64,9 @@ namespace ubiety.common.logging
 		/// <returns>
 		/// A <see cref="System.Boolean"/>
 		/// </returns>
-		public static bool IsDebugEnabled(string name)
+		public static bool IsDebugEnabled( string name )
 		{
-			return LogManager.GetLogger(name).IsDebugEnabled;
+			return false;// LogManager.GetLogger( name ).IsDebugEnabled;
 		}
 
 		/// <summary>
@@ -78,9 +78,9 @@ namespace ubiety.common.logging
 		/// <returns>
 		/// A <see cref="System.Boolean"/>
 		/// </returns>
-		public static bool IsInfoEnabled(object o)
+		public static bool IsInfoEnabled( object o )
 		{
-			return IsInfoEnabled(o.GetType());
+			return IsInfoEnabled( o.GetType() );
 		}
 
 		/// <summary>
@@ -92,9 +92,9 @@ namespace ubiety.common.logging
 		/// <returns>
 		/// A <see cref="System.Boolean"/>
 		/// </returns>
-		public static bool IsInfoEnabled(Type t)
+		public static bool IsInfoEnabled( Type t )
 		{
-			return IsInfoEnabled(t.FullName);
+			return IsInfoEnabled( t.FullName );
 		}
 
 		/// <summary>
@@ -106,9 +106,9 @@ namespace ubiety.common.logging
 		/// <returns>
 		/// A <see cref="System.Boolean"/>
 		/// </returns>
-		public static bool IsInfoEnabled(string name)
+		public static bool IsInfoEnabled( string name )
 		{
-			return LogManager.GetLogger(name).IsInfoEnabled;
+			return true; //LogManager.GetLogger(name).IsInfoEnabled;
 		}
 
 		/// <summary>
@@ -120,9 +120,9 @@ namespace ubiety.common.logging
 		/// <returns>
 		/// A <see cref="System.Boolean"/>
 		/// </returns>
-		public static bool IsWarnEnabled(object o)
+		public static bool IsWarnEnabled( object o )
 		{
-			return IsWarnEnabled(o.GetType());
+			return IsWarnEnabled( o.GetType() );
 		}
 
 		/// <summary>
@@ -134,9 +134,9 @@ namespace ubiety.common.logging
 		/// <returns>
 		/// A <see cref="System.Boolean"/>
 		/// </returns>
-		public static bool IsWarnEnabled(Type t)
+		public static bool IsWarnEnabled( Type t )
 		{
-			return IsWarnEnabled(t.FullName);
+			return IsWarnEnabled( t.FullName );
 		}
 
 		/// <summary>
@@ -148,9 +148,9 @@ namespace ubiety.common.logging
 		/// <returns>
 		/// A <see cref="System.Boolean"/>
 		/// </returns>
-		public static bool IsWarnEnabled(string name)
+		public static bool IsWarnEnabled( string name )
 		{
-			return LogManager.GetLogger(name).IsWarnEnabled;
+			return true; //LogManager.GetLogger(name).IsInfoEnabled;
 		}
 
 		/// <summary>
@@ -162,9 +162,9 @@ namespace ubiety.common.logging
 		/// <returns>
 		/// A <see cref="System.Boolean"/>
 		/// </returns>
-		public static bool IsErrorEnabled(object o)
+		public static bool IsErrorEnabled( object o )
 		{
-			return IsErrorEnabled(o.GetType());
+			return IsErrorEnabled( o.GetType() );
 		}
 
 		/// <summary>
@@ -176,9 +176,9 @@ namespace ubiety.common.logging
 		/// <returns>
 		/// A <see cref="System.Boolean"/>
 		/// </returns>
-		public static bool IsErrorEnabled(Type t)
+		public static bool IsErrorEnabled( Type t )
 		{
-			return IsErrorEnabled(t.FullName);
+			return IsErrorEnabled( t.FullName );
 		}
 
 		/// <summary>
@@ -190,9 +190,9 @@ namespace ubiety.common.logging
 		/// <returns>
 		/// A <see cref="System.Boolean"/>
 		/// </returns>
-		public static bool IsErrorEnabled(string name)
+		public static bool IsErrorEnabled( string name )
 		{
-			return LogManager.GetLogger(name).IsErrorEnabled;
+			return true; //LogManager.GetLogger(name).IsInfoEnabled;
 		}
 
 		/// <summary>
@@ -204,9 +204,9 @@ namespace ubiety.common.logging
 		/// <returns>
 		/// A <see cref="System.Boolean"/>
 		/// </returns>
-		public static bool IsFatalEnabled(object o)
+		public static bool IsFatalEnabled( object o )
 		{
-			return IsFatalEnabled(o.GetType());
+			return IsFatalEnabled( o.GetType() );
 		}
 
 		/// <summary>
@@ -218,9 +218,9 @@ namespace ubiety.common.logging
 		/// <returns>
 		/// A <see cref="System.Boolean"/>
 		/// </returns>
-		public static bool IsFatalEnabled(Type t)
+		public static bool IsFatalEnabled( Type t )
 		{
-			return IsFatalEnabled(t.FullName);
+			return IsFatalEnabled( t.FullName );
 		}
 
 		/// <summary>
@@ -232,9 +232,9 @@ namespace ubiety.common.logging
 		/// <returns>
 		/// A <see cref="System.Boolean"/>
 		/// </returns>
-		public static bool IsFatalEnabled(string name)
+		public static bool IsFatalEnabled( string name )
 		{
-			return LogManager.GetLogger(name).IsFatalEnabled;
+			return true; //LogManager.GetLogger(name).IsInfoEnabled;
 		}
 
 		#endregion
@@ -250,9 +250,9 @@ namespace ubiety.common.logging
 		/// <param name="message">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void Debug(object o, object message)
+		public static void Debug( object o, object message )
 		{
-			Debug(o.GetType(), message);
+			Debug( o.GetType(), message );
 		}
 
 		/// <summary>
@@ -264,9 +264,9 @@ namespace ubiety.common.logging
 		/// <param name="message">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void Debug(Type t, object message)
+		public static void Debug( Type t, object message )
 		{
-			Debug(t.FullName, message);
+			Debug( t.FullName, message );
 		}
 
 		/// <summary>
@@ -278,9 +278,9 @@ namespace ubiety.common.logging
 		/// <param name="message">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void Debug(string name, object message)
+		public static void Debug( string name, object message )
 		{
-			LogManager.GetLogger(name).Debug(message);
+			//LogManager.GetLogger(name).Debug(message);
 		}
 
 		/// <summary>
@@ -295,9 +295,9 @@ namespace ubiety.common.logging
 		/// <param name="parameters">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void DebugFormat(object o, string format, params object[] parameters)
+		public static void DebugFormat( object o, string format, params object[] parameters )
 		{
-			DebugFormat(o.GetType(), format, parameters);
+			DebugFormat( o.GetType(), format, parameters );
 		}
 
 		/// <summary>
@@ -312,9 +312,9 @@ namespace ubiety.common.logging
 		/// <param name="parameters">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void DebugFormat(Type t, string format, params object[] parameters)
+		public static void DebugFormat( Type t, string format, params object[] parameters )
 		{
-			DebugFormat(t.FullName, format, parameters);
+			DebugFormat( t.FullName, format, parameters );
 		}
 
 		/// <summary>
@@ -329,9 +329,9 @@ namespace ubiety.common.logging
 		/// <param name="parameters">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void DebugFormat(string name, string format, params object[] parameters)
+		public static void DebugFormat( string name, string format, params object[] parameters )
 		{
-			LogManager.GetLogger(name).Debug(format, parameters);
+			//LogManager.GetLogger(name).Debug(format, parameters);
 		}
 
 		#endregion
@@ -347,9 +347,9 @@ namespace ubiety.common.logging
 		/// <param name="message">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void Info(object o, object message)
+		public static void Info( object o, object message )
 		{
-			Info(o.GetType(), message);
+			Info( o.GetType(), message );
 		}
 
 		/// <summary>
@@ -361,9 +361,9 @@ namespace ubiety.common.logging
 		/// <param name="message">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void Info(Type t, object message)
+		public static void Info( Type t, object message )
 		{
-			Info(t.FullName, message);
+			Info( t.FullName, message );
 		}
 
 		/// <summary>
@@ -375,9 +375,10 @@ namespace ubiety.common.logging
 		/// <param name="message">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void Info(string name, object message)
+		public static void Info( string name, object message )
 		{
-			LogManager.GetLogger(name).Info(message);
+			Console.WriteLine( name + " " + message );
+			//LogManager.GetLogger(name).Info(message);
 		}
 
 		/// <summary>
@@ -392,9 +393,9 @@ namespace ubiety.common.logging
 		/// <param name="parameters">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void InfoFormat(object o, string format, params object[] parameters)
+		public static void InfoFormat( object o, string format, params object[] parameters )
 		{
-			InfoFormat(o.GetType(), format, parameters);
+			InfoFormat( o.GetType(), format, parameters );
 		}
 
 		/// <summary>
@@ -409,9 +410,9 @@ namespace ubiety.common.logging
 		/// <param name="parameters">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void InfoFormat(Type t, string format, params object[] parameters)
+		public static void InfoFormat( Type t, string format, params object[] parameters )
 		{
-			InfoFormat(t.FullName, format, parameters);
+			InfoFormat( t.FullName, format, parameters );
 		}
 
 		/// <summary>
@@ -426,9 +427,10 @@ namespace ubiety.common.logging
 		/// <param name="parameters">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void InfoFormat(string name, string format, params object[] parameters)
+		public static void InfoFormat( string name, string format, params object[] parameters )
 		{
-			LogManager.GetLogger(name).Info(format, parameters);
+			Console.WriteLine( name + " " + string.Format( format, parameters ) );
+			//LogManager.GetLogger(name).Info(format, parameters);
 		}
 
 		#endregion
@@ -444,9 +446,9 @@ namespace ubiety.common.logging
 		/// <param name="message">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void Warn(object o, object message)
+		public static void Warn( object o, object message )
 		{
-			Warn(o.GetType(), message);
+			Warn( o.GetType(), message );
 		}
 
 		/// <summary>
@@ -458,9 +460,9 @@ namespace ubiety.common.logging
 		/// <param name="message">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void Warn(Type t, object message)
+		public static void Warn( Type t, object message )
 		{
-			Warn(t.FullName, message);
+			Warn( t.FullName, message );
 		}
 
 		/// <summary>
@@ -472,9 +474,10 @@ namespace ubiety.common.logging
 		/// <param name="message">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void Warn(string name, object message)
+		public static void Warn( string name, object message )
 		{
-			LogManager.GetLogger(name).Warn(message);
+			Console.WriteLine( name + " " + message );
+			//LogManager.GetLogger(name).Warn(message);
 		}
 
 		/// <summary>
@@ -489,9 +492,9 @@ namespace ubiety.common.logging
 		/// <param name="parameters">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void WarnFormat(object o, string format, params object[] parameters)
+		public static void WarnFormat( object o, string format, params object[] parameters )
 		{
-			WarnFormat(o.GetType(), format, parameters);
+			WarnFormat( o.GetType(), format, parameters );
 		}
 
 		/// <summary>
@@ -506,9 +509,9 @@ namespace ubiety.common.logging
 		/// <param name="parameters">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void WarnFormat(Type t, string format, params object[] parameters)
+		public static void WarnFormat( Type t, string format, params object[] parameters )
 		{
-			WarnFormat(t.FullName, format, parameters);
+			WarnFormat( t.FullName, format, parameters );
 		}
 
 		/// <summary>
@@ -523,9 +526,10 @@ namespace ubiety.common.logging
 		/// <param name="parameters">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void WarnFormat(string name, string format, params object[] parameters)
+		public static void WarnFormat( string name, string format, params object[] parameters )
 		{
-			LogManager.GetLogger(name).Warn(format, parameters);
+			Console.WriteLine( name + " " + string.Format( format, parameters ) );
+			//LogManager.GetLogger(name).Warn(format, parameters);
 		}
 
 		#endregion
@@ -541,9 +545,9 @@ namespace ubiety.common.logging
 		/// <param name="message">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void Error(object o, object message)
+		public static void Error( object o, object message )
 		{
-			Error(o.GetType(), message);
+			Error( o.GetType(), message );
 		}
 
 		/// <summary>
@@ -555,9 +559,9 @@ namespace ubiety.common.logging
 		/// <param name="message">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void Error(Type t, object message)
+		public static void Error( Type t, object message )
 		{
-			Error(t.FullName, message);
+			Error( t.FullName, message );
 		}
 
 		/// <summary>
@@ -569,9 +573,10 @@ namespace ubiety.common.logging
 		/// <param name="message">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void Error(string name, object message)
+		public static void Error( string name, object message )
 		{
-			LogManager.GetLogger(name).Error(message);
+			Console.WriteLine( name + " " + message );
+			//LogManager.GetLogger(name).Error(message);
 		}
 
 		/// <summary>
@@ -586,9 +591,9 @@ namespace ubiety.common.logging
 		/// <param name="parameters">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void ErrorFormat(object o, string format, params object[] parameters)
+		public static void ErrorFormat( object o, string format, params object[] parameters )
 		{
-			ErrorFormat(o.GetType(), format, parameters);
+			ErrorFormat( o.GetType(), format, parameters );
 		}
 
 		/// <summary>
@@ -603,9 +608,9 @@ namespace ubiety.common.logging
 		/// <param name="parameters">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void ErrorFormat(Type t, string format, params object[] parameters)
+		public static void ErrorFormat( Type t, string format, params object[] parameters )
 		{
-			ErrorFormat(t.FullName, format, parameters);
+			ErrorFormat( t.FullName, format, parameters );
 		}
 
 		/// <summary>
@@ -620,9 +625,10 @@ namespace ubiety.common.logging
 		/// <param name="parameters">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void ErrorFormat(string name, string format, params object[] parameters)
+		public static void ErrorFormat( string name, string format, params object[] parameters )
 		{
-			LogManager.GetLogger(name).Error(format, parameters);
+			Console.WriteLine( name + " " + string.Format( format, parameters ) );
+			//LogManager.GetLogger(name).Error(format, parameters);
 		}
 
 		#endregion
@@ -638,9 +644,9 @@ namespace ubiety.common.logging
 		/// <param name="message">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void Fatal(object o, object message)
+		public static void Fatal( object o, object message )
 		{
-			Fatal(o.GetType(), message);
+			Fatal( o.GetType(), message );
 		}
 
 		/// <summary>
@@ -652,9 +658,9 @@ namespace ubiety.common.logging
 		/// <param name="message">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void Fatal(Type t, object message)
+		public static void Fatal( Type t, object message )
 		{
-			Fatal(t.FullName, message);
+			Fatal( t.FullName, message );
 		}
 
 		/// <summary>
@@ -666,9 +672,10 @@ namespace ubiety.common.logging
 		/// <param name="message">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void Fatal(string name, object message)
+		public static void Fatal( string name, object message )
 		{
-			LogManager.GetLogger(name).Fatal(message);
+			Console.WriteLine( name + " " + message );
+			//LogManager.GetLogger(name).Fatal(message);
 		}
 
 		/// <summary>
@@ -683,9 +690,9 @@ namespace ubiety.common.logging
 		/// <param name="parameters">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void FatalFormat(object o, string format, params object[] parameters)
+		public static void FatalFormat( object o, string format, params object[] parameters )
 		{
-			FatalFormat(o.GetType(), format, parameters);
+			FatalFormat( o.GetType(), format, parameters );
 		}
 
 		/// <summary>
@@ -700,9 +707,9 @@ namespace ubiety.common.logging
 		/// <param name="parameters">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void FatalFormat(Type t, string format, params object[] parameters)
+		public static void FatalFormat( Type t, string format, params object[] parameters )
 		{
-			FatalFormat(t.FullName, format, parameters);
+			FatalFormat( t.FullName, format, parameters );
 		}
 
 		/// <summary>
@@ -717,9 +724,10 @@ namespace ubiety.common.logging
 		/// <param name="parameters">
 		/// A <see cref="System.Object"/>
 		/// </param>
-		public static void FatalFormat(string name, string format, params object[] parameters)
+		public static void FatalFormat( string name, string format, params object[] parameters )
 		{
-			LogManager.GetLogger(name).Fatal(format, parameters);
+			Console.WriteLine( name + " " + string.Format( format, parameters ) );
+			//LogManager.GetLogger(name).Fatal(format, parameters);
 		}
 
 		#endregion
