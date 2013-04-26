@@ -63,7 +63,7 @@ namespace ubiety
 				return;
 			}
 
-			Logger.Info(typeof (ProtocolParser), "Starting message parsing...");
+			Logger.Info(typeof (ProtocolParser), "Starting message parsing... ");
 
 			// We have received the end tag asking to finish communication so we change to the Disconnect State.
 			if (message.Contains("</stream:stream>"))
@@ -105,6 +105,10 @@ namespace ubiety
 							break;
 					}
 				}
+
+				if(_root!=null){
+					Console.WriteLine("Parsed: "+_root);
+				}
 			}
 			catch (XmlException e)
 			{
@@ -120,6 +124,9 @@ namespace ubiety
 			catch (InvalidOperationException e)
 			{
 				Logger.ErrorFormat(typeof (ProtocolParser), "Invalid Operation: {0}", e);
+			}
+			catch (Exception e){
+				Logger.ErrorFormat(typeof (ProtocolParser), "Exception: {0}", e);
 			}
 		}
 
@@ -157,7 +164,7 @@ namespace ubiety
 
 			var ns = Ns.LookupNamespace(_reader.Prefix);
 			var q = new XmlQualifiedName(_reader.LocalName, ns);
-			XmlElement elem = TagRegistry.GetTag<Tag>(q);
+			XmlElement elem = TagRegistry.GetTag<Tag>(q) ?? new ubiety.core.GenericTag(q);
 
 			foreach (string attrname in ht.Keys)
 			{
