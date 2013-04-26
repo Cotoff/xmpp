@@ -183,6 +183,7 @@ namespace ubiety.net
 
 		private static bool RemoteValidation(object sender, X509Certificate cert, X509Chain chain, SslPolicyErrors errors)
 		{
+			return true;
 			if (errors == SslPolicyErrors.None)
 			{
 				return true;
