@@ -67,7 +67,7 @@ namespace ubiety.states
 				if (!ProtocolState.Authenticated)
 				{
 					Logger.Debug(this, "Creating SASL Processor");
-					ProtocolState.Processor = SASLProcessor.CreateProcessor(f.StartSASL.SupportedTypes);
+					ProtocolState.Processor = SASLProcessor.CreateProcessor(MechanismType.Plain);//f.StartSASL.SupportedTypes);
 					if (ProtocolState.Processor == null)
 					{
 						Logger.Debug(this, "No allowed type available. Allow more authentication options.");
